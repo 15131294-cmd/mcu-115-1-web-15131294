@@ -2,7 +2,7 @@ function openMenu() {
   var menuBtn = document.getElementById("menu");
 
   if (menuBtn.className === "nav-menu") {
-    menuBtn.className = " responsive";
+    menuBtn.className += " responsive";
   } else {
     menuBtn.className = "nav-menu";
   }
@@ -18,10 +18,10 @@ function scrollActive() {
       sectionTop = current.offsetTop - 70,
       sectionId = current.getAttribute("id");
 
-    if (scrollY > sectionTop && scrollY <= sectionTop  sectionHeight) {
-      document.querySelector("header nav a[href*="  sectionId  "]").classList.add("active");
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector("header nav a[href*=" + sectionId + "]").classList.add("active");
     } else {
-      document.querySelector("header nav a[href*="  sectionId  "]").classList.remove("active");
+      document.querySelector("header nav a[href*=" + sectionId + "]").classList.remove("active");
     }
   });
 }
